@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
+import css from 'rollup-plugin-css-only';
 import typescript from 'rollup-plugin-typescript';
 import typescript2 from 'rollup-plugin-typescript2';
 import VuePlugin from 'rollup-plugin-vue';
@@ -33,6 +34,9 @@ export default {
 		commonjs(),
 		VuePlugin({
 			css: false
+		}),
+		css({
+			output: resolve(__dirname, './dist/hello.css')
 		}),
 		typescript({
 			typescript: require('typescript')
