@@ -38,5 +38,8 @@ export default {
 			typescript: require('typescript')
 		})
 		// typescript2()
+	],
+	external: [
+		'vue'
 	]
 };
